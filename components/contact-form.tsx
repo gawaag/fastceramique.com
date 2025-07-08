@@ -72,9 +72,9 @@ export default function ContactForm({ initialService }: ContactFormProps) {
               <SelectTrigger>
                 <SelectValue placeholder="Sélectionnez un pack ou une prestation" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
                 {prestations.map((p) => (
-                  <SelectItem key={p.id} value={p.title}>
+                  <SelectItem key={p.id} value={p.title} className="hover:bg-gray-100 dark:hover:bg-gray-700">
                     {p.title}
                   </SelectItem>
                 ))}

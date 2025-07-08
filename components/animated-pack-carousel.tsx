@@ -37,12 +37,13 @@ export default function AnimatedPackCarousel() {
             src={item.image || "/placeholder.svg"}
             alt={item.title}
             width={80} // Match div width
-            height={80} // Adjusted height to fit, leaving space for title and price
+            height={70} // Reduced height to leave more space for text
             objectFit="cover"
             className="rounded-md"
           />
-          <span className="pack-title">{item.title}</span>
-          <span className="pack-price">{item.price}</span>
+          {/* Further adjusted font size for better fit and alignment */}
+          <span className="pack-title text-[7px] leading-tight text-center px-1">{item.title}</span>
+          <span className="pack-price text-[9px] font-bold text-center">{item.price}</span>
         </div>
       ))}
     </div>

@@ -25,11 +25,11 @@ export default function SiteHeader() {
           <Link className="font-medium hover:underline" href="/">
             Accueil
           </Link>
-          <Link className="font-medium hover:underline" href="/#about">
-            À Propos
-          </Link>
           <Link className="font-medium hover:underline" href="/#prestations">
             Prestations
+          </Link>
+          <Link className="font-medium hover:underline" href="/avis">
+            Avis
           </Link>
           <Link className="font-medium hover:underline" href="/contact">
             Prise de RDV
@@ -48,11 +48,11 @@ export default function SiteHeader() {
               <Link className="flex w-full items-center py-2 text-lg font-semibold" href="/">
                 Accueil
               </Link>
-              <Link className="flex w-full items-center py-2 text-lg font-semibold" href="/#about">
-                À Propos
-              </Link>
               <Link className="flex w-full items-center py-2 text-lg font-semibold" href="/#prestations">
                 Prestations
+              </Link>
+              <Link className="flex w-full items-center py-2 text-lg font-semibold" href="/avis">
+                Avis
               </Link>
               <Link className="flex w-full items-center py-2 text-lg font-semibold" href="/contact">
                 Prise de RDV
