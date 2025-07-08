@@ -10,12 +10,12 @@ export default function AnimatedPackCarousel() {
       image: "/pack1-new-car-polish.jpeg",
     },
     {
-      title: "PACK 2: Décontamination Polish Classique",
+      title: "PACK 2: Décon-<br />tamination<br />Polish Céramique",
       price: "À partir de 150€",
       image: "/pack2-new-car-detailing.jpeg",
     },
     {
-      title: "PACK 3: Décontamination Polish Céramique Auto",
+      title: "PACK 3: Décon-<br />tamination<br />Polish Céramique",
       price: "À partir de 250€",
       image: "/pack3-new-ceramic-car.jpeg",
     },
@@ -42,7 +42,10 @@ export default function AnimatedPackCarousel() {
             className="rounded-md"
           />
           {/* Further adjusted font size for better fit and alignment */}
-          <span className="pack-title text-[7px] leading-tight text-center px-1">{item.title}</span>
+          <span
+            className="pack-title text-[7px] leading-tight text-center px-1"
+            dangerouslySetInnerHTML={{ __html: item.title }}
+          ></span>
           <span className="pack-price text-[9px] font-bold text-center">{item.price}</span>
         </div>
       ))}
