@@ -32,21 +32,23 @@ export default function AnimatedPackCarousel() {
   return (
     <div className="card-3d">
       {carouselItems.map((item, index) => (
-        <div key={index}>
+        <div key={index} className="flex flex-col items-center justify-center h-full">
+          {" "}
+          {/* Added flex-col and h-full */}
           <Image
             src={item.image || "/placeholder.svg"}
             alt={item.title}
-            width={80} // Match div width
-            height={70} // Reduced height to leave more space for text
+            width={80}
+            height={60} // Further reduced height to leave more space for text
             objectFit="cover"
             className="rounded-md"
           />
-          {/* Further adjusted font size for better fit and alignment */}
           <span
-            className="pack-title text-[7px] leading-tight text-center px-1"
+            className="pack-title text-[8px] leading-tight text-center px-1 mt-1" // Increased font slightly, added mt-1
             dangerouslySetInnerHTML={{ __html: item.title }}
           ></span>
-          <span className="pack-price text-[9px] font-bold text-center">{item.price}</span>
+          <span className="pack-price text-[10px] font-bold text-center mt-0.5">{item.price}</span>{" "}
+          {/* Increased font, added mt-0.5 */}
         </div>
       ))}
     </div>

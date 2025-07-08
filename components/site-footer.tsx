@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import FooterAnimatedSocialCard from "@/components/footer-animated-social-card" // Import the new component
+import { PhoneIcon as Whatsapp } from "lucide-react" // Import WhatsApp icon
 
 export default function SiteFooter() {
   return (
@@ -48,11 +49,18 @@ export default function SiteFooter() {
                 mr_fast_ceramique@outlook.com
               </Link>
             </p>
+            {/* WhatsApp Link */}
+            <p>
+              WhatsApp:{" "}
+              <Link
+                href="https://wa.me/33767518212"
+                className="hover:text-primary transition-colors flex items-center gap-1"
+              >
+                07 67 51 82 12 <Whatsapp className="h-4 w-4 inline-block" />
+              </Link>
+            </p>
           </div>
-          <Button
-            // Removed variant="outline"
-            className="mt-4 bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity"
-          >
+          <Button className="mt-4 bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity">
             Laisser un avis
           </Button>
         </div>
