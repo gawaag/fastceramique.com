@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White for light mode */
+    --foreground: 222.2 84% 4.9%; /* Dark for light mode */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 210 80% 50%; /* Blue matching logo */
+    --primary-foreground: 210 20% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 80% 50%; /* Blue matching logo */
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%; /* Deep dark background */
+    --foreground: 210 20% 98%; /* Bright white for text */
+    --card: 217.2 32.6% 17.5%; /* Darker card background */
+    --card-foreground: 210 20% 98%;
+    --popover: 217.2 32.6% 17.5%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 80% 60%; /* Vibrant blue */
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%; /* Dark secondary for elements */
+    --secondary-foreground: 210 20% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 210 80% 70%; /* Lighter, more vibrant accent for highlights */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 210 80% 60%; /* Vibrant blue ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-spinner {
+  border: 3px solid var(--muted-foreground); /* Light grey border */
+  border-top: 3px solid hsl(var(--primary)); /* Primary color for the spinning part */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
