@@ -1,28 +1,54 @@
 "use client"
 import { useState, useEffect } from "react"
-import { useActionState } from "react" // Import useActionState
-import { submitContactForm } from "@/app/contact/action" // Import the Server Action
-import { Loader } from "@/components/ui/loader" // Import the Loader component
+import { useActionState } from "react"
+import { submitContactForm } from "@/app/contact/action"
+import { Loader } from "@/components/ui/loader"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 interface ContactFormProps {
   initialService?: string
 }
 
 export default function ContactForm({ initialService }: ContactFormProps) {
+  const prestations = [
+    { id: "pack1", title: "PACK 1: Polish Classique Correction", price: "99€" },
+    { id: "pack2", title: "PACK 2: Décontamination Polish Classique", price: "150€" },
+    { id: "pack3", title: "PACK 3: Décontamination Polish Céramique Auto", price: "250€" },
+    { id: "pack4", title: "Nettoyage Intérieur Complet 100% Vapeur", price: "99€" },
+  ]
+
   const [service, setService] = useState(initialService || "")
-  const [state, formAction, isPending] = useActionState(submitContactForm, null) // Initialize useActionState
+  const [selectedPrice, setSelectedPrice] = useState("")
+  const [date, setDate] = useState("")
+  const [time, setTime] = useState("")
+
+  const [state, formAction, isPending] = useActionState(submitContactForm, {})
 
   useEffect(() => {
     if (initialService) {
       setService(initialService)
+      const initialPrestation = prestations.find((p) => p.title === initialService)
+      if (initialPrestation) {
+        setSelectedPrice(initialPrestation.price)
+      }
     }
   }, [initialService])
+
+  const handleServiceChange = (value: string) => {
+    setService(value)
+    const selectedPrestation = prestations.find((p) => p.title === value)
+    if (selectedPrestation) {
+      setSelectedPrice(selectedPrestation.price)
+    } else {
+      setSelectedPrice("")
+    }
+  }
 
   return (
     <Card className="w-full max-w-md mx-auto">
@@ -42,13 +68,46 @@ export default function ContactForm({ initialService }: ContactFormProps) {
           </div>
           <div className="grid gap-2">
             <Label htmlFor="service">Pack / Prestation</Label>
-            <Input
-              id="service"
-              name="service"
-              placeholder="Ex: PACK 1: Polish Classique Correction"
-              value={service}
-              onChange={(e) => setService(e.target.value)}
-            />
+            <Select onValueChange={handleServiceChange} value={service} name="service">
+              <SelectTrigger>
+                <SelectValue placeholder="Sélectionnez un pack ou une prestation" />
+              </SelectTrigger>
+              <SelectContent>
+                {prestations.map((p) => (
+                  <SelectItem key={p.id} value={p.title}>
+                    {p.title}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="price">Prix estimé</Label>
+            <Input id="price" name="price" value={selectedPrice} readOnly placeholder="Prix auto-rempli" />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="date">Date souhaitée</Label>
+              <Input
+                id="date"
+                name="date"
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                required
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="time">Heure souhaitée</Label>
+              <Input
+                id="time"
+                name="time"
+                type="time"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+                required
+              />
+            </div>
           </div>
           <div className="grid gap-2">
             <Label htmlFor="message">Message</Label>
@@ -56,10 +115,10 @@ export default function ContactForm({ initialService }: ContactFormProps) {
           </div>
           <Button
             type="submit"
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground flex items-center justify-center gap-2"
+            className="w-full bg-gradient-primary text-primary-foreground flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
             disabled={isPending}
           >
-            {isPending && <Loader />} {/* Show loader when pending */}
+            {isPending && <Loader />}
             {isPending ? "Envoi en cours..." : "Envoyer le message"}
           </Button>
           {state && (

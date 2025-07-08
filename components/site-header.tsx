@@ -33,18 +33,14 @@ export default function SiteHeader() {
             <Link href="/" className="flex w-full items-center py-2 text-lg font-semibold">
               Accueil
             </Link>
-            <Link href="#prestations" className="flex w-full items-center py-2 text-lg font-semibold">
-              Tarifs
-            </Link>
+            {/* Removed "Tarifs" link */}
             <Link href="#prestations" className="flex w-full items-center py-2 text-lg font-semibold">
               Prestations
             </Link>
             <Link href="/contact" className="flex w-full items-center py-2 text-lg font-semibold">
               Prise de RDV
             </Link>
-            <Link href="/contact" className="flex w-full items-center py-2 text-lg font-semibold">
-              Contact
-            </Link>
+            {/* Removed "Contact" link */}
           </div>
         </SheetContent>
       </Sheet>
@@ -64,18 +60,14 @@ export default function SiteHeader() {
         <Link href="/" className="text-muted-foreground transition-colors hover:text-foreground">
           Accueil
         </Link>
-        <Link href="#prestations" className="text-muted-foreground transition-colors hover:text-foreground">
-          Tarifs
-        </Link>
+        {/* Removed "Tarifs" link */}
         <Link href="#prestations" className="text-muted-foreground transition-colors hover:text-foreground">
           Prestations
         </Link>
         <Link href="/contact" className="text-muted-foreground transition-colors hover:text-foreground">
           Prise de RDV
         </Link>
-        <Link href="/contact" className="text-muted-foreground transition-colors hover:text-foreground">
-          Contact
-        </Link>
+        {/* Removed "Contact" link */}
       </nav>
       <div className="ml-auto">
         <ModeToggle />

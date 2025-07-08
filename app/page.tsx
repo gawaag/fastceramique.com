@@ -12,11 +12,8 @@ export default function HomePage() {
         <FadeIn>
           <HeroSection />
         </FadeIn>
-        <FadeIn delay={200}>
-          {" "}
-          {/* Add a slight delay for the next section */}
-          <PrestationsSection />
-        </FadeIn>
+        {/* PrestationsSection now handles its own staggered FadeIn for cards */}
+        <PrestationsSection />
       </main>
       <FadeIn delay={400}>
         {" "}

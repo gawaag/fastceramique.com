@@ -81,6 +81,10 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      // Add custom gradient background
+      backgroundImage: {
+        "gradient-primary": "linear-gradient(to right, #0A1128, #FFFFFF)", // Dark blue to white
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

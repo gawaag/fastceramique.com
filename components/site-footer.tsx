@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Facebook, Instagram, Youtube } from "lucide-react"
+import FooterAnimatedSocialCard from "@/components/footer-animated-social-card" // Import the new component
 
 export default function SiteFooter() {
   return (
@@ -9,7 +9,7 @@ export default function SiteFooter() {
       <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12">
         {/* Logo and Socials */}
         <div className="flex flex-col items-start gap-6 col-span-1 md:col-span-1 lg:col-span-1">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 mb-4">
             <Image
               src="/mr-fast-ceramique-logo.png"
               alt="Mr Fast Céramique Logo"
@@ -19,20 +19,7 @@ export default function SiteFooter() {
             />
             <span className="sr-only">Mr Fast Céramique</span>
           </Link>
-          <div className="flex gap-4">
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Instagram className="h-7 w-7" />
-              <span className="sr-only">Instagram</span>
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Facebook className="h-7 w-7" />
-              <span className="sr-only">Facebook</span>
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Youtube className="h-7 w-7" />
-              <span className="sr-only">YouTube</span>
-            </Link>
-          </div>
+          <FooterAnimatedSocialCard /> {/* Use the new component */}
         </div>
 
         {/* About Us */}
@@ -57,14 +44,14 @@ export default function SiteFooter() {
             <p>Adresse: Fresnes, 94260</p>
             <p>
               Email:{" "}
-              <Link href="mailto:contact@mrfastceramique.com" className="hover:text-primary transition-colors">
-                contact@mrfastceramique.com
+              <Link href="mailto:mr_fast_ceramique@outlook.com" className="hover:text-primary transition-colors">
+                mr_fast_ceramique@outlook.com
               </Link>
             </p>
           </div>
           <Button
-            variant="outline"
-            className="mt-4 bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+            // Removed variant="outline"
+            className="mt-4 bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity"
           >
             Laisser un avis
           </Button>
@@ -80,7 +67,7 @@ export default function SiteFooter() {
             <li>Jeudi: 10h - 18h</li>
             <li>Vendredi: 10h - 18h</li>
             <li>Samedi: 10h - 18h</li>
-            <li>Dimanche: Fermé</li>
+            <li>Dimanche: 10h - 18h</li>
           </ul>
         </div>
       </div>

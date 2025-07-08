@@ -31,7 +31,7 @@
     --card: 217.2 32.6% 17.5%; /* Darker card background */
     --card-foreground: 210 20% 98%;
     --popover: 217.2 32.6% 17.5%;
-    --popover-foreground: 210 20% 98%;
+    --popover-foreground: 217.2 32.6% 17.5%;
     --primary: 210 80% 60%; /* Vibrant blue */
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%; /* Dark secondary for elements */
@@ -74,4 +74,383 @@
   width: 20px;
   height: 20px;
   animation: spin 1s linear infinite;
+}
+
+/* Glassmorphism Social Card Styles */
+.glass-social-card {
+  position: relative;
+  width: 70px; /* Size for social icons */
+  height: 70px;
+  border-radius: 18px; /* Rounded corners */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Light border */
+}
+
+.glass-social-card-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.6), rgba(156, 184, 236, 0.6), rgba(255, 137, 204, 0.6)); /* Vibrant gradient */
+  opacity: 0.8; /* Slightly transparent */
+  z-index: 1;
+}
+
+.glass-social-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: inherit;
+  z-index: 2;
+}
+
+.glass-social-card-icon {
+  position: relative; /* To be above the overlay */
+  z-index: 3;
+  color: white; /* White icon color */
+  width: 32px; /* Icon size */
+  height: 32px;
+  transition: transform 0.3s ease-out, color 0.3s ease-out;
+}
+
+/* Hover effects */
+.glass-social-card:hover {
+  transform: translateY(-5px) scale(1.05); /* Lift and slightly scale */
+  box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.2); /* More pronounced shadow */
+}
+
+.glass-social-card:hover .glass-social-card-icon {
+  transform: scale(1.1); /* Slightly enlarge icon */
+  color: hsl(var(--primary-foreground)); /* Change icon color on hover */
+}
+
+/* Social Media Glass Box Styles */
+.social-media-glass-box {
+  position: relative;
+  width: 200px; /* Wider to hold multiple icons */
+  height: 70px; /* Fixed height */
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Distribute icons evenly */
+  padding: 0 15px; /* Add some padding */
+  flex-shrink: 0;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.social-media-glass-box-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.6), rgba(156, 184, 236, 0.6), rgba(255, 137, 204, 0.6));
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.social-media-glass-box-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: inherit;
+  z-index: 2;
+}
+
+.social-media-glass-box-icon {
+  position: relative;
+  z-index: 3;
+  color: white;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease-out, color 0.3s ease-out;
+}
+
+/* Hover effects for the entire box */
+.social-media-glass-box:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.2);
+}
+
+/* Hover effects for individual icons within the box */
+.social-media-glass-box-icon:hover {
+  transform: scale(1.2); /* Slightly enlarge individual icon on hover */
+  color: hsl(var(--primary-foreground)); /* Change icon color on hover */
+}
+
+/* Footer Animated Social Card Styles */
+.footer-animated-social-card {
+  position: relative;
+  width: 200px; /* Fixed width for the box */
+  height: 200px; /* Updated height for the box */
+  background: hsl(var(--card));
+  border-radius: 30px; /* Updated border radius */
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  flex-direction: column; /* Arrange icons in a column */
+  gap: 20px; /* Space between icons */
+  padding: 0 15px; /* Padding inside the box */
+  flex-shrink: 0;
+}
+
+.footer-animated-social-card .background {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 107%, #ff89cc 0%, #9cb8ec 30%, #00ffee 60%, #62c2fe 100%);
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.footer-animated-social-card .social-icons-wrapper {
+  position: relative; /* To be above the boxes */
+  z-index: 10;
+  display: flex;
+  flex-direction: column; /* Arrange icons in a column */
+  gap: 20px; /* Space between icons */
+}
+
+.footer-animated-social-card .social-icons-wrapper svg,
+.footer-animated-social-card .social-icons-wrapper .social-icon-image {
+  /* Apply styles to both SVG and Image */
+  width: 32px;
+  height: 32px;
+  color: hsl(var(--muted-foreground)); /* Default icon color for SVG */
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-animated-social-card .social-icons-wrapper svg:hover {
+  color: white; /* Change icon color to white on hover */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Add glow */
+}
+
+.footer-animated-social-card .social-icons-wrapper .social-icon-image:hover {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Add glow for image */
+  transform: scale(1.1); /* Scale for image on hover */
+}
+
+.footer-animated-social-card .box {
+  position: absolute;
+  padding: 0; /* No padding for small boxes */
+  text-align: right;
+  background: rgba(255, 255, 255, 0.15); /* More subtle background */
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10% 13% 42% 0% / 10% 12% 75% 0%;
+  box-shadow: rgba(100, 100, 111, 0.1) -7px 7px 29px 0px; /* Lighter shadow */
+  transform-origin: bottom left;
+  transition: all 1s ease-in-out;
+  z-index: 5; /* Below content, above background */
+}
+
+.footer-animated-social-card .box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.footer-animated-social-card .box:hover::before {
+  opacity: 1;
+}
+
+.footer-animated-social-card .box1 {
+  width: 70%;
+  height: 70%;
+  bottom: -70%;
+  left: -70%;
+}
+.footer-animated-social-card .box1::before {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #ff53d4 60%, #62c2fe 90%);
+}
+
+.footer-animated-social-card .box2 {
+  width: 50%;
+  height: 50%;
+  bottom: -50%;
+  left: -50%;
+  transition-delay: 0.2s;
+}
+.footer-animated-social-card .box2::before {
+  background: radial-gradient(circle at 30% 107%, #91e9ff 0%, #00acee 90%);
+}
+
+.footer-animated-social-card .box3 {
+  width: 30%;
+  height: 30%;
+  bottom: -30%;
+  left: -30%;
+  transition-delay: 0.4s;
+}
+.footer-animated-social-card .box3::before {
+  background: radial-gradient(circle at 30% 107%, #969fff 0%, #b349ff 90%);
+}
+
+.footer-animated-social-card .box4 {
+  width: 10%;
+  height: 10%;
+  bottom: -10%;
+  left: -10%;
+  transition-delay: 0.6s;
+}
+
+/* Hover effects for the main card */
+.footer-animated-social-card:hover {
+  transform: scale(1.05); /* Slightly less aggressive scale */
+  box-shadow: rgba(100, 100, 111, 0.4) 0px 10px 35px 0px; /* More pronounced shadow */
+}
+
+.footer-animated-social-card:hover .background {
+  opacity: 0.7; /* Show background on hover */
+}
+
+.footer-animated-social-card:hover .box {
+  bottom: -1px;
+  left: -1px;
+}
+
+/* 3D Carousel Styles */
+@keyframes autoRun3d {
+  from {
+    transform: perspective(800px) rotateY(-360deg);
+  }
+  to {
+    transform: perspective(800px) rotateY(0deg);
+  }
+}
+
+@keyframes animateBrightness {
+  10% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(0.1);
+  }
+  90% {
+    filter: brightness(1);
+  }
+}
+
+.card-3d {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: perspective(800px);
+  animation: autoRun3d 20s linear infinite;
+  will-change: transform;
+}
+
+.card-3d div {
+  position: absolute;
+  width: 80px; /* Reverted to original width */
+  height: 187px; /* Increased height */
+  background-color: rgba(199, 199, 199, 0.2); /* Slightly transparent background */
+  border: solid 2px lightgray;
+  border-radius: 0.5rem;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  animation: animateBrightness 20s linear infinite;
+  transition-duration: 200ms;
+  will-change: transform, filter;
+
+  /* Added for content layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  overflow: hidden; /* Ensure content stays within bounds */
+}
+
+.card-3d:hover {
+  animation-play-state: paused !important;
+}
+
+.card-3d:hover div {
+  animation-play-state: paused !important;
+}
+
+.card-3d div:nth-child(1) {
+  transform: translate(-50%, -50%) rotateY(0deg) translateZ(150px);
+  animation-delay: -0s;
+}
+.card-3d div:nth-child(2) {
+  transform: translate(-50%, -50%) rotateY(36deg) translateZ(150px);
+  animation-delay: -2s;
+}
+.card-3d div:nth-child(3) {
+  transform: translate(-50%, -50%) rotateY(72deg) translateZ(150px);
+  animation-delay: -4s;
+}
+.card-3d div:nth-child(4) {
+  transform: translate(-50%, -50%) rotateY(108deg) translateZ(150px);
+  animation-delay: -6s;
+}
+.card-3d div:nth-child(5) {
+  transform: translate(-50%, -50%) rotateY(144deg) translateZ(150px);
+  animation-delay: -8s;
+}
+.card-3d div:nth-child(6) {
+  transform: translate(-50%, -50%) rotateY(180deg) translateZ(150px);
+  animation-delay: -10s;
+}
+.card-3d div:nth-child(7) {
+  transform: translate(-50%, -50%) rotateY(216deg) translateZ(150px);
+  animation-delay: -12s;
+}
+.card-3d div:nth-child(8) {
+  transform: translate(-50%, -50%) rotateY(252deg) translateZ(150px);
+  animation-delay: -14s;
+}
+.card-3d div:nth-child(9) {
+  transform: translate(-50%, -50%) rotateY(288deg) translateZ(150px);
+  animation-delay: -16s;
+}
+.card-3d div:nth-child(10) {
+  transform: translate(-50%, -50%) rotateY(324deg) translateZ(150px);
+  animation-delay: -18s;
+}
+
+/* Styles for content inside 3D cards */
+.card-3d div img {
+  width: 100%;
+  height: auto;
+  max-height: 50%; /* Adjusted to leave more space for title and price */
+  object-fit: cover;
+  border-radius: 0.3rem;
+}
+
+.card-3d div .pack-title {
+  font-size: 0.7rem; /* Slightly larger for readability */
+  color: white;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2; /* Adjust line height for multi-line titles */
+}
+
+.card-3d div .pack-price {
+  font-size: 0.6rem;
+  color: white;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  margin-top: 3px;
+  text-align: center;
+  font-weight: bold;
 }

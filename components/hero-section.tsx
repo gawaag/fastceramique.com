@@ -15,14 +15,16 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 bg-black/70 z-10" /> {/* Increased overlay for better text contrast */}
       <div className="relative z-20 text-white px-4 md:px-6 max-w-3xl space-y-6">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">Bienvenue chez Mr Fast Céramique</h1>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-primary bg-clip-text text-transparent">
+          Bienvenue chez Mr Fast Céramique
+        </h1>
         <p className="text-lg md:text-xl lg:text-2xl">
           Votre expert en detailing automobile et protection céramique en Île-de-France.
         </p>
         <Link href="#prestations">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-6 rounded-full"
+            className="bg-gradient-primary text-primary-foreground text-lg px-8 py-6 rounded-full hover:opacity-90 transition-opacity"
           >
             Découvrez nos formules
           </Button>
