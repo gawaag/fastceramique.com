@@ -1,13 +1,10 @@
 "use client"
 import { useState, useEffect } from "react"
-import { useActionState } from "react"
-import { submitContactForm } from "@/app/contact/action"
-import { Loader } from "@/components/ui/loader"
+import { useRouter } from "next/navigation" // Import useRouter
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
@@ -16,19 +13,38 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ initialService }: ContactFormProps) {
+  const router = useRouter()
+
   const prestations = [
-    { id: "pack1", title: "PACK 1: Polish Classique Correction", price: "99€" },
-    { id: "pack2", title: "PACK 2: Décontamination Polish Classique", price: "150€" },
-    { id: "pack3", title: "PACK 3: Décontamination Polish Céramique Auto", price: "250€" },
-    { id: "pack4", title: "Nettoyage Intérieur Complet 100% Vapeur", price: "99€" },
+    {
+      id: "pack1",
+      title: "PACK 1: Polish Classique Correction",
+      price: "99€",
+      calendlyLink: "https://calendly.com/mr_fast_ceramique-ehpj/rdv-pack-1-polish-classique-correction",
+    },
+    {
+      id: "pack2",
+      title: "PACK 2: Décontamination Polish Classique",
+      price: "150€",
+      calendlyLink: "https://calendly.com/mr_fast_ceramique-ehpj/pack-2-decontamination-polish-classique",
+    },
+    {
+      id: "pack3",
+      title: "PACK 3: Décontamination Polish Céramique Auto",
+      price: "250€",
+      calendlyLink: "https://calendly.com/mr_fast_ceramique-ehpj/pack-3-decontamination-polish-ceramique-auto",
+    },
+    {
+      id: "pack4",
+      title: "Nettoyage Intérieur Complet 100% Vapeur",
+      price: "99€",
+      calendlyLink: "https://calendly.com/mr_fast_ceramique-ehpj/nettoyage-interieur-complet-100-vapeur",
+    },
   ]
 
   const [service, setService] = useState(initialService || "")
   const [selectedPrice, setSelectedPrice] = useState("")
-  const [date, setDate] = useState("")
-  const [time, setTime] = useState("")
-
-  const [state, formAction, isPending] = useActionState(submitContactForm, {})
+  const [selectedCalendlyLink, setSelectedCalendlyLink] = useState<string | undefined>(undefined)
 
   useEffect(() => {
     if (initialService) {
@@ -36,6 +52,7 @@ export default function ContactForm({ initialService }: ContactFormProps) {
       const initialPrestation = prestations.find((p) => p.title === initialService)
       if (initialPrestation) {
         setSelectedPrice(initialPrestation.price)
+        setSelectedCalendlyLink(initialPrestation.calendlyLink)
       }
     }
   }, [initialService])
@@ -45,30 +62,32 @@ export default function ContactForm({ initialService }: ContactFormProps) {
     const selectedPrestation = prestations.find((p) => p.title === value)
     if (selectedPrestation) {
       setSelectedPrice(selectedPrestation.price)
+      setSelectedCalendlyLink(selectedPrestation.calendlyLink)
     } else {
       setSelectedPrice("")
+      setSelectedCalendlyLink(undefined)
+    }
+  }
+
+  const handleReserveClick = () => {
+    if (selectedCalendlyLink) {
+      window.open(selectedCalendlyLink, "_blank") // Ouvre le lien Calendly dans un nouvel onglet
     }
   }
 
   return (
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
-        <CardTitle className="text-2xl">Contactez-nous</CardTitle>
-        <CardDescription>Remplissez le formulaire ci-dessous pour nous envoyer un message.</CardDescription>
+        <CardTitle className="text-2xl">Réservez votre prestation</CardTitle>
+        <CardDescription>Sélectionnez un pack pour prendre rendez-vous via Calendly.</CardDescription>
       </CardHeader>
       <CardContent>
-        <form action={formAction} className="grid gap-4">
-          <div className="grid gap-2">
-            <Label htmlFor="name">Nom</Label>
-            <Input id="name" name="name" placeholder="Votre nom" required />
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" placeholder="Votre email" required />
-          </div>
+        <div className="grid gap-4">
+          {" "}
+          {/* Utilisation d'une div au lieu d'un form car la soumission est directe */}
           <div className="grid gap-2">
             <Label htmlFor="service">Pack / Prestation</Label>
-            <Select onValueChange={handleServiceChange} value={service} name="service">
+            <Select onValueChange={handleServiceChange} value={service}>
               <SelectTrigger>
                 <SelectValue placeholder="Sélectionnez un pack ou une prestation" />
               </SelectTrigger>
@@ -85,48 +104,15 @@ export default function ContactForm({ initialService }: ContactFormProps) {
             <Label htmlFor="price">Prix estimé</Label>
             <Input id="price" name="price" value={selectedPrice} readOnly placeholder="Prix auto-rempli" />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="date">Date souhaitée</Label>
-              <Input
-                id="date"
-                name="date"
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                required
-              />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="time">Heure souhaitée</Label>
-              <Input
-                id="time"
-                name="time"
-                type="time"
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
-                required
-              />
-            </div>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" name="message" placeholder="Votre message..." required className="min-h-[100px]" />
-          </div>
           <Button
-            type="submit"
+            type="button" // Type "button" pour éviter la soumission de formulaire par défaut
             className="w-full bg-gradient-primary text-primary-foreground flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-            disabled={isPending}
+            onClick={handleReserveClick}
+            disabled={!selectedCalendlyLink} // Désactive le bouton si aucun lien Calendly n'est sélectionné
           >
-            {isPending && <Loader />}
-            {isPending ? "Envoi en cours..." : "Envoyer le message"}
+            Réserver
           </Button>
-          {state && (
-            <p className={`text-center text-sm mt-2 ${state.success ? "text-green-500" : "text-red-500"}`}>
-              {state.message}
-            </p>
-          )}
-        </form>
+        </div>
       </CardContent>
     </Card>
   )
