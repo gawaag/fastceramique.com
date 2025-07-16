@@ -7,8 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Mr Fast Céramique",
-  description: "Votre expert en detailing automobile et protection céramique.",
+  title: "Lumen Car",
+  description: "Votre expert en installation d'écrans CarPlay/Android Auto et solutions d'éclairage automobile.",
     generator: 'v0.dev'
 }
 

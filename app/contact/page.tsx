@@ -22,7 +22,7 @@ export default function ContactPage() {
             {/* Wrap the main content of the contact page */}
             <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                Contactez Mr Fast Céramique
+                Contactez Lumen Car
               </h1>
               <p className="text-lg text-muted-foreground">
                 Nous sommes là pour répondre à toutes vos questions et vous aider à prendre soin de votre véhicule.
@@ -39,7 +39,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-6 w-6 text-primary" />
-                  <p className="text-lg text-foreground">mr_fast_ceramique@outlook.com</p>
+                  <p className="text-lg text-foreground">contact@lumencar.com</p>
                 </div>
               </div>
               {/* Replaced static image with animated carousel */}

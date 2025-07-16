@@ -13,13 +13,13 @@ export default function AboutUsBlock() {
           </h3>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Forts de nos nombreuses années d&apos;expérience et d&apos;une passion inébranlable pour l&apos;automobile,
-            nous excellons dans l&apos;art minutieux du detailing. Chez Mr Fast Céramique, chaque véhicule est traité
-            avec le plus grand soin, garantissant une qualité de service irréprochable à des prix toujours compétitifs.
-            Nous nous engageons à sublimer votre voiture, lui offrant une protection durable et une brillance éclatante.
+            nous excellons dans l&apos;art minutieux du detailing. Chez Lumen Car, chaque installation est réalisée avec
+            le plus grand soin, garantissant une qualité de service irréprochable à des prix toujours compétitifs. Nous
+            nous engageons à sublimer votre voiture, lui offrant une protection durable et une brillance éclatante.
             Faites confiance à notre expertise pour révéler le meilleur de votre véhicule.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed font-semibold">
-            Mr Fast Céramique est fier de vous servir depuis plus de 5 ans, transformant chaque véhicule avec passion et
+            Lumen Car est fier de vous servir depuis plus de 5 ans, transformant chaque véhicule avec passion et
             expertise.
           </p>
         </CardContent>

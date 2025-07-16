@@ -51,7 +51,7 @@ const reviews = [
     author: "Adam Hacham",
     rating: 5,
     comment:
-      "Service céramique polish de qualité exceptionnelle ! J'ai fait traiter ma voiture par Mr Fast Céramique et je suis vraiment satisfait du résultat. La brillance est incroyable et la protection est vraiment efficace. Le service est professionnel, rapide et soigné. Je recommande vivement ! 5/5 sans hésiter.",
+      "Service céramique polish de qualité exceptionnelle ! J'ai fait traiter ma voiture par Lumen Car et je suis vraiment satisfait du résultat. La brillance est incroyable et la protection est vraiment efficace. Le service est professionnel, rapide et soigné. Je recommande vivement ! 5/5 sans hésiter.",
     date: "Visité en février",
     timeAgo: "il y a 4 mois",
     sortDate: new Date("2025-03-08"), // Approx. date for sorting
@@ -61,7 +61,7 @@ const reviews = [
     author: "Aghiles Dahmam",
     rating: 5,
     comment:
-      "Merci à MR fast céramique pour le boulot incroyable, les micro rayures ont vraiment disparu. Un lavage extérieur digne d'une enseigne prestigieuse, un intérieur encore plus propre. Je suis bluffé par le résultat, ma voiture est comme neuve. Je recommande à 100% !",
+      "Merci à Lumen Car pour le boulot incroyable, les micro rayures ont vraiment disparu. Un lavage extérieur digne d'une enseigne prestigieuse, un intérieur encore plus propre. Je suis bluffé par le résultat, ma voiture est comme neuve. Je recommande à 100% !",
     date: "Visité en janvier",
     timeAgo: "il y a 5 mois",
     sortDate: new Date("2025-02-08"), // Approx. date for sorting
@@ -71,7 +71,7 @@ const reviews = [
     author: "Faycal Faycal",
     rating: 5,
     comment:
-      "C'est la deuxième fois que je confie mon véhicule à cet établissement, et je suis toujours aussi satisfait ! Le nettoyage intérieur et extérieur est impeccable, et le résultat du polish est bluffant. Mes véhicules avaient de nombreuses micro-rayures et des défauts de peinture, mais après le traitement, ils sont comme neufs. Je recommande vivement Mr Fast Céramique pour leur professionnalisme et la qualité de leur travail.",
+      "C'est la deuxième fois que je confie mon véhicule à cet établissement, et je suis toujours aussi satisfait ! Le nettoyage intérieur et extérieur est impeccable, et le résultat du polish est bluffant. Mes véhicules avait de nombreuses micro-rayures et des défauts de peinture, mais après le traitement, ils sont comme neufs. Je recommande vivement Lumen Car pour leur professionnalisme et la qualité de leur travail.",
     date: "Visité en décembre 2024",
     timeAgo: "il y a 6 mois",
     sortDate: new Date("2025-01-08"), // Approx. date for sorting
@@ -91,7 +91,7 @@ const reviews = [
     author: "Assia Bahzad",
     rating: 5,
     comment:
-      "Merci infiniment pour votre prestation qui est au top. Je recommande vivement Mr Fast céramique pour embellir votre véhicule, les micro rayures disparaissent vraiment, ils sont très professionnels, perfectionnistes, et à l'écoute de leurs clients. Le résultat est bluffant, ma voiture n'a jamais été aussi belle. Un grand merci à toute l'équipe !",
+      "Merci infiniment pour votre prestation qui est au top. Je recommande vivement Lumen Car pour embellir votre véhicule, les micro rayures disparaissent vraiment, ils sont très professionnels, perfectionnistes, et à l'écoute de leurs clients. Le résultat est bluffant, ma voiture n'a jamais été aussi belle. Un grand merci à toute l'équipe !",
     date: "Visité en décembre 2024",
     timeAgo: "il y a 6 mois",
     sortDate: new Date("2025-01-08"), // Approx. date for sorting
@@ -141,8 +141,8 @@ export default function AvisPage() {
                           className={`w-4 h-4 ${i < review.rating ? "text-yellow-400" : "text-gray-500"} fill-current`}
                         />
                       ))}
-                      <span className="ml-2 text-sm text-gray-400">{review.timeAgo}</span>
                     </div>
+                    <span className="ml-2 text-sm text-gray-400">{review.timeAgo}</span>
                   </div>
                 </CardHeader>
                 <CardContent className="flex-1 pt-2">

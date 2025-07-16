@@ -8,32 +8,32 @@ import AboutUsBlock from "@/components/about-us-block" // Import the new compone
 export default function PrestationsSection() {
   const prestations = [
     {
-      title: "PACK 1: Polish Classique Correction",
-      time: "Temps : 1h30",
-      price: "À partir de 99€",
-      description: "Selon taille du véhicule. Correction des micro-rayures et brillance professionnelle.",
-      image: "/pack1-new-car-polish.jpeg",
+      title: "Option 1: Écran CarPlay / Android Auto",
+      time: "Installation",
+      price: "149 €",
+      description: "Installation et vente d'écran CarPlay / Android Auto.",
+      image: "/prestations-images/carplay-android-auto.jpeg",
     },
     {
-      title: "PACK 2: Décontamination Polish Classique",
-      time: "Temps : 2h00",
-      price: "À partir de 150€",
-      description: "Selon taille du véhicule. Nettoyage en profondeur et polissage pour une finition impeccable.",
-      image: "/pack2-new-car-detailing.jpeg",
+      title: "Option 2: Écran CarPlay + Caméra",
+      time: "Installation",
+      price: "199 €",
+      description: "Installation et vente d'écran CarPlay + caméra.",
+      image: "/prestations-images/carplay-camera.jpeg",
     },
     {
-      title: "PACK 3: Décontamination Polish Céramique Auto",
-      time: "Temps : 3h à 5h",
-      price: "À partir de 250€",
-      description: "Selon taille du véhicule. Protection céramique durable après décontamination et polissage.",
-      image: "/pack3-new-ceramic-car.jpeg",
+      title: "Option 3: Écran + Caméra Recul + Caméra 360",
+      time: "Installation",
+      price: "349 €",
+      description: "Installation et vente d'écran + caméra de recul + caméra 360.",
+      image: "/prestations-images/carplay-camera-360.jpeg",
     },
     {
-      title: "Nettoyage Intérieur Complet 100% Vapeur",
-      time: "Temps : 2h à 3h",
-      price: "99€",
-      description: "La beauté commence ici. Nettoyage en profondeur de l'habitacle avec vapeur.",
-      image: "/interior-steam-cleaning.png",
+      title: "Option 4: Écran + Caméra + Lumières d'ambiance",
+      time: "Installation",
+      price: "399 €",
+      description: "Installation et vente d'écran CarPlay / Android Auto / caméra / lumières d'ambiance.",
+      image: "/prestations-images/carplay-camera-lights.jpeg",
     },
   ]
 
@@ -76,9 +76,11 @@ export default function PrestationsSection() {
           ))}
         </div>
         <div className="mt-10 text-center text-muted-foreground text-sm space-y-2">
-          <p className="text-red-500 font-semibold">⚠️ VÉHICULE PROPRE OBLIGATOIRE ⚠️</p>
-          <p>Les rayures profondes s&apos;estomperont.</p>
-          <p>Les micros rayures et petits frottements s&apos;effaceront.</p>
+          <p className="text-primary font-semibold">
+            Triple prise allume cigare + Un chargeur de voiture 4 en 1 rétractable et rapide (66W), avec ports
+            USB/Type-C, compatible iPhone/Android, intégrant un toit étoilé et un projecteur.
+          </p>
+          <p className="text-lg font-semibold text-primary">Offerts sur toutes les options !</p>
         </div>
         <AboutUsBlock /> {/* New About Us block */}
       </div>

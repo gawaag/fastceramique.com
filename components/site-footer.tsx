@@ -11,14 +11,8 @@ export default function SiteFooter() {
         {/* Logo and Socials */}
         <div className="flex flex-col items-start gap-6 col-span-1 md:col-span-1 lg:col-span-1">
           <Link href="/" className="flex items-center gap-2 mb-4">
-            <Image
-              src="/mr-fast-ceramique-logo.png"
-              alt="Mr Fast Céramique Logo"
-              width={150}
-              height={150}
-              className="h-16 w-auto"
-            />
-            <span className="sr-only">Mr Fast Céramique</span>
+            <Image src="/lumen-car-logo.png" alt="Lumen Car Logo" width={150} height={150} className="h-16 w-auto" />
+            <span className="sr-only">Lumen Car</span>
           </Link>
           <FooterAnimatedSocialCard /> {/* Use the new component */}
         </div>
@@ -45,8 +39,8 @@ export default function SiteFooter() {
             <p>Adresse: Fresnes, 94260</p>
             <p>
               Email:{" "}
-              <Link href="mailto:mr_fast_ceramique@outlook.com" className="hover:text-primary transition-colors">
-                mr_fast_ceramique@outlook.com
+              <Link href="mailto:contact@lumencar.com" className="hover:text-primary transition-colors">
+                contact@lumencar.com
               </Link>
             </p>
             {/* WhatsApp Link */}
@@ -80,7 +74,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="container mx-auto px-4 md:px-6 mt-12 pt-8 border-t border-border text-center text-muted-foreground text-xs">
-        <p>&copy; {new Date().getFullYear()} Mr Fast Céramique. Tous droits réservés.</p>
+        <p>&copy; {new Date().getFullYear()} Lumen Car. Tous droits réservés.</p>
       </div>
     </footer>
   )

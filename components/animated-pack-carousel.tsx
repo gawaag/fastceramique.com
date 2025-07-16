@@ -5,28 +5,28 @@ import Image from "next/image"
 export default function AnimatedPackCarousel() {
   const prestations = [
     {
-      title: "PACK 1: Polish Classique Correction",
-      displayTitle: "PACK 1:<br />Polish Classique<br />Correction",
-      price: "À partir de 99€",
-      image: "/pack1-new-car-polish.jpeg",
+      title: "Option 1: Écran CarPlay / Android Auto",
+      displayTitle: "Option 1:<br />Écran CarPlay<br />/ Android Auto",
+      price: "149 €",
+      image: "/prestations-images/carplay-android-auto.jpeg",
     },
     {
-      title: "PACK 2: Décontamination Polish Classique",
-      displayTitle: "PACK 2:<br />Décon-<br />tamination<br />Polish Classique",
-      price: "À partir de 150€",
-      image: "/pack2-new-car-detailing.jpeg",
+      title: "Option 2: Écran CarPlay + Caméra",
+      displayTitle: "Option 2:<br />Écran CarPlay<br />+ Caméra",
+      price: "199 €",
+      image: "/prestations-images/carplay-camera.jpeg",
     },
     {
-      title: "PACK 3: Décontamination Polish Céramique Auto",
-      displayTitle: "PACK 3:<br />Décon-<br />tamination<br />Polish Céramique<br />Auto",
-      price: "À partir de 250€",
-      image: "/pack3-new-ceramic-car.jpeg",
+      title: "Option 3: Écran + Caméra Recul + Caméra 360",
+      displayTitle: "Option 3:<br />Écran + Caméra<br />Recul + Caméra 360",
+      price: "349 €",
+      image: "/prestations-images/carplay-camera-360.jpeg",
     },
     {
-      title: "Nettoyage Intérieur Complet 100% Vapeur",
-      displayTitle: "Nettoyage<br />Intérieur<br />Complet<br />100% Vapeur",
-      price: "99€",
-      image: "/interior-steam-cleaning.png",
+      title: "Option 4: Écran + Caméra + Lumières d'ambiance",
+      displayTitle: "Option 4:<br />Écran + Caméra<br />+ Lumières<br />d'ambiance",
+      price: "399 €",
+      image: "/prestations-images/carplay-camera-lights.jpeg",
     },
   ]
 

@@ -17,28 +17,28 @@ export default function ContactForm({ initialService }: ContactFormProps) {
 
   const prestations = [
     {
-      id: "pack1",
-      title: "PACK 1: Polish Classique Correction",
-      price: "99€",
-      calendlyLink: "https://calendly.com/mr_fast_ceramique-ehpj/rdv-pack-1-polish-classique-correction",
+      id: "option1",
+      title: "Option 1: Écran CarPlay / Android Auto",
+      price: "149 €",
+      calendlyLink: "https://calendly.com/lumencar25/30min",
     },
     {
-      id: "pack2",
-      title: "PACK 2: Décontamination Polish Classique",
-      price: "150€",
-      calendlyLink: "https://calendly.com/mr_fast_ceramique-ehpj/pack-2-decontamination-polish-classique",
+      id: "option2",
+      title: "Option 2: Écran CarPlay + Caméra",
+      price: "199 €",
+      calendlyLink: "https://calendly.com/lumencar25/30min",
     },
     {
-      id: "pack3",
-      title: "PACK 3: Décontamination Polish Céramique Auto",
-      price: "250€",
-      calendlyLink: "https://calendly.com/mr_fast_ceramique-ehpj/pack-3-decontamination-polish-ceramique-auto",
+      id: "option3",
+      title: "Option 3: Écran + Caméra Recul + Caméra 360",
+      price: "349 €",
+      calendlyLink: "https://calendly.com/lumencar25/30min",
     },
     {
-      id: "pack4",
-      title: "Nettoyage Intérieur Complet 100% Vapeur",
-      price: "99€",
-      calendlyLink: "https://calendly.com/mr_fast_ceramique-ehpj/nettoyage-interieur-complet-100-vapeur",
+      id: "option4",
+      title: "Option 4: Écran + Caméra + Lumières d'ambiance",
+      price: "399 €",
+      calendlyLink: "https://calendly.com/lumencar25/30min",
     },
   ]
 
@@ -79,17 +79,17 @@ export default function ContactForm({ initialService }: ContactFormProps) {
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
         <CardTitle className="text-2xl">Réservez votre prestation</CardTitle>
-        <CardDescription>Sélectionnez un pack pour prendre rendez-vous via Calendly.</CardDescription>
+        <CardDescription>Sélectionnez une option pour prendre rendez-vous via Calendly.</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
           {" "}
           {/* Utilisation d'une div au lieu d'un form car la soumission est directe */}
           <div className="grid gap-2">
-            <Label htmlFor="service">Pack / Prestation</Label>
+            <Label htmlFor="service">Option / Prestation</Label>
             <Select onValueChange={handleServiceChange} value={service}>
               <SelectTrigger>
-                <SelectValue placeholder="Sélectionnez un pack ou une prestation" />
+                <SelectValue placeholder="Sélectionnez une option ou une prestation" />
               </SelectTrigger>
               <SelectContent className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
                 {prestations.map((p) => (

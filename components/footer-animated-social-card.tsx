@@ -8,10 +8,13 @@ export default function FooterAnimatedSocialCard() {
     <div className="footer-animated-social-card">
       <div className="background"></div>
       <div className="social-icons-wrapper">
-        <Link href="https://www.instagram.com/mr_fast_ceramique/" aria-label="Instagram">
+        <Link href="https://www.instagram.com/lumen.car/" aria-label="Instagram">
           <Instagram />
         </Link>
-        <Link href="https://snapchat.com/t/XsJl60so" aria-label="Snapchat">
+        <Link
+          href="https://www.snapchat.com/@lumencar75?invite_id=Gs9d-pP5&locale=fr_FR&share_id=1SwHALofRsiXWoYm42cMqQ&sid=4fd51b3df01249d492267a776f62fbaa"
+          aria-label="Snapchat"
+        >
           <Image
             src="/snapchat-logo.png" // Use the custom Snapchat image
             alt="Snapchat"

@@ -12,8 +12,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/60 z-10" />
 
       <div className="relative z-20 text-white px-4 md:px-6 max-w-3xl space-y-6">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-blue-text bg-clip-text text-transparent">
-          Bienvenue chez Mr Fast Céramique
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-violet-text bg-clip-text text-transparent">
+          Bienvenue chez Lumen Car
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl">
           Votre expert en detailing automobile et protection céramique en Île-de-France.

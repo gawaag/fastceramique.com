@@ -4,10 +4,12 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 const images = [
-  "/showroom-images/car-blue-red-front.jpeg",
-  "/showroom-images/car-white-side.jpeg",
-  "/showroom-images/car-red-blue-front.jpeg",
-  "/showroom-images/car-silver-top.jpeg",
+  "/showroom-images/interior-tablet-0.jpeg",
+  "/showroom-images/interior-tablet-1.jpeg",
+  "/showroom-images/interior-tablet-4.jpeg", // New image 1
+  "/showroom-images/interior-tablet-5.jpeg", // New image 2
+  "/showroom-images/interior-tablet-2.jpeg",
+  "/showroom-images/interior-tablet-3.jpeg",
 ]
 
 export default function ShowroomCarousel() {

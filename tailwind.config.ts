@@ -79,8 +79,8 @@ const config = {
         "marquee-slow": "marquee-slow 60s linear infinite", // Adjust duration as needed
       },
       backgroundImage: {
-        "gradient-primary": "linear-gradient(to right, #0A1128, #FFFFFF)", // Dark blue to white
-        "gradient-blue-text": "linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)))", // Blue gradient for text
+        "gradient-primary": "linear-gradient(to right, #8A7BAF, #B388C7)", // Muted blue-violet to muted pink-violet
+        "gradient-violet-text": "linear-gradient(to right, #8A7BAF, #B388C7)", // Muted blue-violet to muted pink-violet
       },
     },
   },
