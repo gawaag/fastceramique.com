@@ -23,7 +23,7 @@ export default function FooterAnimatedSocialCard() {
             className="social-icon-image" // Add a class for specific styling if needed
           />
         </Link>
-        <Link href="https://www.tiktok.com/@mr.fast.ceramique" aria-label="TikTok">
+        <Link href="https://www.tiktok.com/@lumencar25" aria-label="TikTok">
           <Image
             src="/tiktok-logo.png" // Use the custom TikTok image
             alt="TikTok"
