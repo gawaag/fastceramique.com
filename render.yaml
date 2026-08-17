@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: fastceramique
+    runtime: static
+    buildCommand: pnpm install --frozen-lockfile && pnpm run build
+    staticPublishPath: dist
